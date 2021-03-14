@@ -1,9 +1,8 @@
+function playerFunction() {
+    return prompt('Rock, paper or scissors?').toLowerCase();
+}
 
-let playerPlay = prompt('Rock, paper or scissors?').toLowerCase();
-
-let computerPlay = myFunction()
-
-function myFunction() {
+function compFunction() {
     let randomValue = Math.floor((Math.random() * 3) + 1); 
     if (randomValue === 1) {
         return 'rock';
@@ -14,31 +13,36 @@ function myFunction() {
     }
 }    
 
-function playRound (computerPlay, playerPlay) {
-    if (computerPlay === 'rock' && playerPlay === 'scissors')
+function playRound(computerSelection, playerSelection) {
+    computerSelection = compFunction();
+    playerSelection = playerFunction();
+    console.log(computerSelection);
+    console.log(playerSelection);
+    if (computerSelection === 'rock' && playerSelection === 'scissors')
     alert("You Lose! Rock beats scissors");  
-    if (computerPlay === 'rock' && playerPlay === 'rock')
+    else if (computerSelection === 'rock' && playerSelection === 'rock')
     alert("Draw");
-    if (computerPlay === 'rock' && playerPlay === 'paper')
+    else if (computerSelection === 'rock' && playerSelection === 'paper')
     alert("You Win! Paper beats rock");
     
-    if (computerPlay === 'paper' && playerPlay === 'scissors')
+    else if (computerSelection === 'paper' && playerSelection === 'scissors')
     alert("You Win! Scissors beat paper");  
-    if (computerPlay === 'paper' && playerPlay === 'rock')
+    else if (computerSelection === 'paper' && playerSelection === 'rock')
     alert("You Lose! Paper beats rock");
-    if (computerPlay === 'paper' && playerPlay === 'paper')
+    else if (computerSelection === 'paper' && playerSelection === 'paper')
     alert("Draw");
 
-    if (computerPlay === 'scissors' && playerPlay === 'scissors')
+    else if (computerSelection === 'scissors' && playerSelection === 'scissors')
     alert("Draw");  
-    if (computerPlay === 'scissors' && playerPlay === 'rock')
+    else if (computerSelection === 'scissors' && playerSelection === 'rock')
     alert("You Win! Rock beats scissors");
-    if (computerPlay === 'scissors' && playerPlay === 'paper')
+    else if (computerSelection === 'scissors' && playerSelection === 'paper')
     alert("You Lose! Scissors beat paper");
 }
 
-console.log(computerPlay);
-console.log(playerPlay);
-console.log(playRound(computerPlay, playerPlay));
+playRound();
+playRound();
+
+
 
 

@@ -1,0 +1,57 @@
+
+let playerPlay;
+
+playerPlay = userFunction();
+
+function userFunction() {
+    return prompt('Rock, paper or scissors?').toLowerCase();
+}
+
+let computerPlay = myFunction();
+
+function myFunction() {
+    let randomValue = Math.floor((Math.random() * 3) + 1); 
+    if (randomValue === 1) {
+        return 'rock';
+    } else if (randomValue === 2) {
+        return 'paper';
+    } else {
+        return 'scissors';
+    }
+}    
+
+function playRound (computerPlay, playerPlay) {
+    if (computerPlay === 'rock' && playerPlay === 'scissors')
+    alert("You Lose! Rock beats scissors");  
+    else if (computerPlay === 'rock' && playerPlay === 'rock')
+    alert("Draw");
+    else if (computerPlay === 'rock' && playerPlay === 'paper')
+    alert("You Win! Paper beats rock");
+    
+    else if (computerPlay === 'paper' && playerPlay === 'scissors')
+    alert("You Win! Scissors beat paper");  
+    else if (computerPlay === 'paper' && playerPlay === 'rock')
+    alert("You Lose! Paper beats rock");
+    else if (computerPlay === 'paper' && playerPlay === 'paper')
+    alert("Draw");
+
+    else if (computerPlay === 'scissors' && playerPlay === 'scissors')
+    alert("Draw");  
+    else if (computerPlay === 'scissors' && playerPlay === 'rock')
+    alert("You Win! Rock beats scissors");
+    else if (computerPlay === 'scissors' && playerPlay === 'paper')
+    alert("You Lose! Scissors beat paper");
+}
+
+function game(){
+    playRound(computerPlay, playerPlay);
+}
+
+game();
+game();
+
+
+console.log(computerPlay);
+console.log(playerPlay);
+// console.log(game());
+
